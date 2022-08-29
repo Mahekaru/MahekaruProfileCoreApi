@@ -12,47 +12,47 @@ namespace MahekaruProfileCoreAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProfilesController : ControllerBase
+    public class SkillsController : ControllerBase
     {
         private readonly MahekaruProfileCoreAPIContext _context;
 
-        public ProfilesController(MahekaruProfileCoreAPIContext context)
+        public SkillsController(MahekaruProfileCoreAPIContext context)
         {
             _context = context;
         }
 
-        // GET: api/Profiles
+        // GET: api/Skills
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Profile>>> GetProfile()
+        public async Task<ActionResult<IEnumerable<SkillsModel>>> GetSkills()
         {
-            return await _context.Profile.ToListAsync();
+            return await _context.Skills.ToListAsync();
         }
 
-        // GET: api/Profiles/5
+        // GET: api/Skills/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Profile>> GetProfile(int id)
+        public async Task<ActionResult<SkillsModel>> GetSkills(int id)
         {
-            var profile = await _context.Profile.FindAsync(id);
+            var skills = await _context.Skills.FindAsync(id);
 
-            if (profile == null)
+            if (skills == null)
             {
                 return NotFound();
             }
 
-            return profile;
+            return skills;
         }
 
-        // PUT: api/Profiles/5
+        // PUT: api/Skills/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProfile(int id, Profile profile)
+        public async Task<IActionResult> PutSkills(int id, SkillsModel skills)
         {
-            if (id != profile.Id)
+            if (id != skills.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(profile).State = EntityState.Modified;
+            _context.Entry(skills).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace MahekaruProfileCoreAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ProfileExists(id))
+                if (!SkillsExists(id))
                 {
                     return NotFound();
                 }
@@ -73,36 +73,36 @@ namespace MahekaruProfileCoreAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Profiles
+        // POST: api/Skills
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Profile>> PostProfile(Profile profile)
+        public async Task<ActionResult<SkillsModel>> PostSkills(SkillsModel skills)
         {
-            _context.Profile.Add(profile);
+            _context.Skills.Add(skills);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProfile", new { id = profile.Id }, profile);
+            return CreatedAtAction("GetSkills", new { id = skills.Id }, skills);
         }
 
-        // DELETE: api/Profiles/5
+        // DELETE: api/Skills/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProfile(int id)
+        public async Task<IActionResult> DeleteSkills(int id)
         {
-            var profile = await _context.Profile.FindAsync(id);
-            if (profile == null)
+            var skills = await _context.Skills.FindAsync(id);
+            if (skills == null)
             {
                 return NotFound();
             }
 
-            _context.Profile.Remove(profile);
+            _context.Skills.Remove(skills);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool ProfileExists(int id)
+        private bool SkillsExists(int id)
         {
-            return _context.Profile.Any(e => e.Id == id);
+            return _context.Skills.Any(e => e.Id == id);
         }
     }
 }

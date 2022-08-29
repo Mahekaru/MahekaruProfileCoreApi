@@ -14,6 +14,8 @@ namespace MahekaruProfileCoreAPI.Data
         {
         }
 
-        public DbSet<MahekaruProfileCoreAPI.Models.Profile> Profile { get; set; }
+        public DbSet<MahekaruProfileCoreAPI.Models.ProfileModel> Profile { get; set; }
+
+        public DbSet<MahekaruProfileCoreAPI.Models.SkillsModel> Skills { get; set; }
     }
 }

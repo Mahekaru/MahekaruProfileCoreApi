@@ -7351,7 +7351,7 @@
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "ftps://michaelejennings.com": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

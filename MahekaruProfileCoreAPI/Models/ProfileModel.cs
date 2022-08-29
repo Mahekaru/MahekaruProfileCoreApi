@@ -1,10 +1,14 @@
-﻿namespace MahekaruProfileCoreAPI.Models
+﻿using Newtonsoft.Json;
+
+namespace MahekaruProfileCoreAPI.Models
 {
-    public class Profile
+    public class ProfileModel
     {
+        [JsonIgnore]
         public int Id { get; set; }
         public string Name { get; set; }
         public int Exp { get; set; } = 0;
+        public int ExpTotal { get; set; } = 0;
         public int HP { get; set; }
         public int MP { get; set; }
         public string LinkedIn { get; set; }
