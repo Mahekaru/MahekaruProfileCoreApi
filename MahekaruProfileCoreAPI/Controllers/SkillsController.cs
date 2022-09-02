@@ -42,63 +42,63 @@ namespace MahekaruProfileCoreAPI.Controllers
             return skills;
         }
 
-        // PUT: api/Skills/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutSkills(int id, SkillsModel skills)
-        {
-            if (id != skills.Id)
-            {
-                return BadRequest();
-            }
+        //// PUT: api/Skills/5
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> PutSkills(int id, SkillsModel skills)
+        //{
+        //    if (id != skills.Id)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            _context.Entry(skills).State = EntityState.Modified;
+        //    _context.Entry(skills).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!SkillsExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!SkillsExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        // POST: api/Skills
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<SkillsModel>> PostSkills(SkillsModel skills)
-        {
-            _context.Skills.Add(skills);
-            await _context.SaveChangesAsync();
+        //// POST: api/Skills
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPost]
+        //public async Task<ActionResult<SkillsModel>> PostSkills(SkillsModel skills)
+        //{
+        //    _context.Skills.Add(skills);
+        //    await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetSkills", new { id = skills.Id }, skills);
-        }
+        //    return CreatedAtAction("GetSkills", new { id = skills.Id }, skills);
+        //}
 
-        // DELETE: api/Skills/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteSkills(int id)
-        {
-            var skills = await _context.Skills.FindAsync(id);
-            if (skills == null)
-            {
-                return NotFound();
-            }
+        //// DELETE: api/Skills/5
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> DeleteSkills(int id)
+        //{
+        //    var skills = await _context.Skills.FindAsync(id);
+        //    if (skills == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _context.Skills.Remove(skills);
-            await _context.SaveChangesAsync();
+        //    _context.Skills.Remove(skills);
+        //    await _context.SaveChangesAsync();
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
         private bool SkillsExists(int id)
         {

@@ -7,16 +7,16 @@ namespace MahekaruProfileCoreAPI.Models
     {
         [JsonIgnore]
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
         public int Exp { get; set; } = 0;
         public int ExpTotal { get; set; } = 0;
-        public int HP { get; set; }
-        public int MP { get; set; }
-        public string LinkedIn { get; set; }
-        public string Email { get; set; }
-        public string Title { get; set; }
-        public string GitHub { get; set; }
-        public string ProfileImage { get; set; }
+        public int HP { get; set; } = 0;
+        public int MP { get; set; } = 0;
+        public string LinkedIn { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string Title { get; set; } = string.Empty;
+        public string GitHub { get; set; } = string.Empty;
+        public string ProfileImage { get; set; } = string.Empty;
 
     }
 }

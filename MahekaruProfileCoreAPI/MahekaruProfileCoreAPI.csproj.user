@@ -11,6 +11,6 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_DbContextTypeFullName>MahekaruProfileCoreAPI.Data.MahekaruProfileCoreAPIContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
-    <NameOfLastUsedPublishProfile>APIGrouop - Zip Deploy</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\mahek\Documents\Source\MahekaruProfileCoreApi\MahekaruProfileCoreAPI\Properties\PublishProfiles\APIGrouop - Zip Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
